@@ -6,6 +6,7 @@ function PluginDecorator(): Plugin {
     let hmrContext: HmrContext
     return {
         name: VITE_PLUGIN_NAME,
+        enforce: 'pre',
         handleHotUpdate(ctx) {
             hmrContext = ctx
         },
