@@ -1,0 +1,13 @@
+{
+  "name": "vite-plugin-print-urls-example",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "*",
+    "vite-plugin-print-urls": "workspace:*"
+  }
+}
