@@ -12,7 +12,7 @@ function PluginDecorator(): Plugin {
         },
         configureServer({ watcher, printUrls, config }) {
             watcher.on('all', (_, file) => {
-                const queue = config.plugins.map(plugin => (plugin.handleHotUpdate ? plugin.handleHotUpdate(hmrContext) : Promise.resolve()))
+                const queue = config.plugins.map(plugin => (plugin.handleHotUpdate && hmrContext ? plugin.handleHotUpdate(hmrContext) : Promise.resolve()))
 
                 Promise.all(queue).then((fullModules) => {
                     const filteredModules = fullModules.filter((item) => item && item.length)
